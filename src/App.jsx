@@ -1,7 +1,14 @@
-import DateCounter from "./DateCounter"
+import Main from "./assets/main";
+import Header from "./Header";
 
 export default function App() {
-  return <div>
-    <DateCounter />
-  </div>
+  return (
+    <div>
+      <div className="app">
+        <Header />
+
+      
+      </div>
+    </div>
+  );
 }
