@@ -257,3 +257,148 @@ progress {
   font-size: inherit;
   padding: 0.8rem;
 }
+
+
+/* For screens smaller than 768px (e.g., tablets and large phones) */
+@media (max-width: 768px) {
+  html {
+    font-size: 56.25%; /* 1rem = 9px, further scaling down */
+  }
+
+  body {
+    padding: 2rem;
+  }
+
+  .app-header {
+    flex-direction: column; /* Ensure header elements stack on smaller screens */
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .main {
+    padding: 0 1rem; /* Add some horizontal padding to main content */
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  .progress {
+    grid-template-columns: 1fr; /* Stack progress items */
+    gap: 0.8rem;
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .timer {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+/* For screens smaller than 480px (e.g., mobile phones) */
+@media (max-width: 480px) {
+  html {
+    font-size: 50%; /* 1rem = 8px, further scaling down for very small screens */
+  }
+
+  body {
+    padding: 1.6rem;
+  }
+
+  .app-header {
+    margin-bottom: 2rem;
+  }
+
+  img {
+    width: 10rem; /* Even smaller image */
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .error {
+    font-size: 1.4rem;
+    padding: 1.5rem;
+  }
+
+  .progress {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  progress {
+    height: 8px; /* Even thinner progress bar */
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .btn-ui {
+    margin-top: 1.5rem;
+  }
+
+  .options {
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .result {
+    font-size: 1.6rem;
+    padding: 1.2rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .result span {
+    font-size: 1.8rem;
+  }
+
+  .highscore {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .loader-container {
+    margin-top: 2rem;
+    gap: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .timer {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
