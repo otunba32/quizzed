@@ -12,7 +12,6 @@ import FinishedScreen from "./FinishedScreen";
 import Footer from "./footer";
 import Timer from "./Timer";
 
-
 const SECS_PER_QUESTION = 30;
 
 const initialState = {
@@ -44,7 +43,7 @@ function reducer(state, action) {
       return {
         ...state,
         status: "active",
-        secondsRemaining: state.questions.length * SECS_PER_QUESTION, 
+        secondsRemaining: state.questions.length * SECS_PER_QUESTION,
       };
     case "newAnswer":
       const question = state.questions.at(state.index);
@@ -73,7 +72,8 @@ function reducer(state, action) {
       return {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
-        status: state.secondsRemaining === 0 ? "finished"  : state.status,     };
+        status: state.secondsRemaining === 0 ? "finished" : state.status,
+      };
     default:
       throw new Error("Action unknown");
   }
@@ -86,17 +86,18 @@ export default function App() {
   ] = useReducer(reducer, initialState);
 
   const numQuestions = questions.length;
-  const maxPossiblePoints = questions.reduce(
-    (prev, cur) => prev + cur.points,
-    0
-  );
+  const maxPossiblePoints = Array.isArray(questions)
+  ? questions.reduce((prev, cur) => prev + cur.points, 0)
+  : 0;
+
 
   useEffect(function () {
-    fetch("http://localhost:8000/questions")
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataRecieved", payload: data }))
-      .catch((err) => dispatch({ type: "dataFailed" }));
-  }, []);
+  fetch("/questions.json")
+    .then((res) => res.json())
+    .then((data) => dispatch({ type: "dataRecieved", payload: data.questions })) // ✅ fix here
+    .catch(() => dispatch({ type: "dataFailed" }));
+}, []);
+
 
   return (
     <div>
