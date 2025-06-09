@@ -10,7 +10,7 @@ import NextButton from "./NextButton";
 import Progress from "./Progress";
 import FinishedScreen from "./FinishedScreen";
 import Footer from "./footer";
-import Timer from "./TImer";
+import Timer from "./Timer";
 
 
 const SECS_PER_QUESTION = 30;
